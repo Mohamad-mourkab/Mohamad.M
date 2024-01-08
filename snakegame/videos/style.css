@@ -3,18 +3,25 @@
     margin: 0;
 }
 
-body
-,.snake{
+body{
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     font-family: 'Bungee Spice', sans-serif;
     font-family: 'Rubik Doodle Shadow', system-ui;
-    background-color: rgb(171, 171, 171);
+    background-color: rgb(66, 66, 66);
 }
 
-.game-board{
+.snake{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bungee Spice', sans-serif;
+    font-family: 'Rubik Doodle Shadow', system-ui;
+    background-color: rgb(66, 66, 66);
+}
+#game-board{
     border-radius: 100px;
     display: grid;
     grid-template-columns: repeat(20, 20px);
