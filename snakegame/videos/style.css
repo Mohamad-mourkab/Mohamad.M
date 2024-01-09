@@ -47,14 +47,25 @@ body{
     border: #d9dbd5 solid 30px;
     border-radius: 20px;
     border-color: rgb(191, 191, 191);
-    box-shadow: inset 0 0 0 5px rgb(0, 0, 0);
+    box-shadow: inset 0 0 0 1px rgb(0, 0, 0);
+}
+
+#instructions{
+    display: flex;
+    position: absolute;
+    height: 200px;
+    color: black;
+    width: 300px;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 30px;
 }
 
 .instruction-text{
+    display: flex;
     position: absolute;
-    top: 60%;
     color: black;
-    width: 300px;
+    margin-top: 60%;
     text-align: center;
     text-transform: capitalize;
     padding: 30px;

@@ -1,9 +1,9 @@
 const board = document.getElementById('game-board');
-const instructionText = document.getElementById('instruction-text')
+const instruction = document.getElementById('instructions')
 const logo = document.getElementById('logo')
 //game var
 
-const gridSize = 20;
+const gridSize = 10;
 let snake = [{ x: 10, y: 10 }]
 let food = generateFood();
 let direction = 'left';
@@ -93,11 +93,10 @@ function move() {
 
 function startGame() {
     gameStarted = true;
-    instructionText.style.display = none;
-    logo.style.display = none;
+    instruction.style.display = 'none';
     gameIntervalt = setInterval(() => {
         move();
-        checkCollision();
+        // checkCollision();
         draw();
     }, gameSpeedDelay);
 }
@@ -137,3 +136,6 @@ function handleKeyPress(event)
 }
 
 document.addEventListener('keydown', handleKeyPress);
+
+function checkCollision(){
+}
