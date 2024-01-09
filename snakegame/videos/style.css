@@ -8,7 +8,6 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
-    font-family: 'Bungee Spice', sans-serif;
     font-family: 'Rubik Doodle Shadow', system-ui;
     background-color: rgb(66, 66, 66);
 }
@@ -47,25 +46,28 @@ body{
     border: #d9dbd5 solid 30px;
     border-radius: 20px;
     border-color: rgb(191, 191, 191);
-    box-shadow: inset 0 0 0 1px rgb(0, 0, 0);
+    box-shadow: inset 0 0 0 5px rgb(0, 0, 0);
 }
 
-#instructions{
-    display: flex;
+
+.instruction-text,
+#instruction-text{
     position: absolute;
-    height: 200px;
     color: black;
-    width: 300px;
+    top: 60%;
+    width: 350px;
     text-align: center;
     text-transform: capitalize;
     padding: 30px;
 }
 
-.instruction-text{
-    display: flex;
+.game-over
+,#gameOver{
+    display: none;
     position: absolute;
     color: black;
-    margin-top: 60%;
+    top: 60%;
+    width: 350px;
     text-align: center;
     text-transform: capitalize;
     padding: 30px;
