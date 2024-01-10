@@ -61,16 +61,31 @@ body{
     padding: 30px;
 }
 
-.game-over
-,#gameOver{
+#gameOver{
+    display: none;
+    position: absolute;
+    color: black;
+    top: 40%;
+    width: 400px;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 45px;
+    padding: 30px;
+    margin-left: 30px;
+}
+
+
+#gameOverText{
     display: none;
     position: absolute;
     color: black;
     top: 60%;
-    width: 350px;
+    width: 400px;
     text-align: center;
     text-transform: capitalize;
+    font-size: 20px;
     padding: 30px;
+    margin-left: 30px;
 }
 
 .scores{
@@ -83,7 +98,7 @@ body{
 }
 
 #highScore,
-#scores{
+#score{
     font-size: 30px;
     font-weight: bolder;
     margin: 10px 0;

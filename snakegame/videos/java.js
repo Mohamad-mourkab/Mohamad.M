@@ -3,6 +3,7 @@ const instruction = document.getElementById('instructions')
 const logo = document.getElementById('logo')
 const score = document.getElementById('score')
 const highScoreText = document.getElementById('highScore')
+const gameOverText = document.getElementById('gameOverText')
 const gameOver = document.getElementById('gameOver')
 //game var
 
@@ -104,6 +105,8 @@ function startGame() {
     gameStarted = true;
     instruction.style.display = 'none';
     logo.style.display = 'none';
+    gameOverText.style.display = 'none';
+    gameOver.style.display = 'none';
     gameIntervalt = setInterval(() => {
         move();
         checkCollision();
@@ -148,16 +151,16 @@ document.addEventListener('keydown', handleKeyPress);
 
 function increaseSpeed() {
     if (gameSpeedDelay > 150) {
-        gameSpeedDelay -= 5;
-    }
-    else if (gameSpeedDelay > 100) {
         gameSpeedDelay -= 3;
     }
-    else if (gameSpeedDelay > 50) {
+    else if (gameSpeedDelay > 100) {
         gameSpeedDelay -= 2;
     }
-    else if (gameSpeedDelay > 25) {
+    else if (gameSpeedDelay > 50) {
         gameSpeedDelay -= 1;
+    }
+    else if (gameSpeedDelay > 25) {
+        gameSpeedDelay -= 0.5;
     }
 }
 
@@ -179,6 +182,9 @@ function resetGame(){
     updateHighScore();
     stopGame();
     snake = [{ x: 10, y: 10 }]
+    gameOverText.style.display = 'block';
+    gameOver.style.display = 'block';
+    logo.style.display = 'block';
     food = generateFood();
     direction = 'left'
     gameSpeedDelay = 200;
@@ -193,8 +199,6 @@ function updateScore(){
 function stopGame(){
     clearInterval(gameIntervalt);
     gameStarted = false;
-    gameOver.style.display = 'flex';
-    logo.style.display = 'block';
 }
 
 function updateHighScore(){
