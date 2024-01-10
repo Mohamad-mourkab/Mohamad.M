@@ -5,6 +5,7 @@ const score = document.getElementById('score')
 const highScoreText = document.getElementById('highScore')
 const gameOverText = document.getElementById('gameOverText')
 const gameOver = document.getElementById('gameOver')
+const tips = document.getElementById('tips')
 //game var
 
 const gridSize = 20;
@@ -50,16 +51,16 @@ function setPosition(element, position) {
 //food
 function drawFood() {
     if (gameStarted) {
-    const foodElement = createGameElement('div', 'food');
-    setPosition(foodElement, food);
-    board.appendChild(foodElement);
+        const foodElement = createGameElement('div', 'food');
+        setPosition(foodElement, food);
+        board.appendChild(foodElement);
     }
 }
 
 function generateFood() {
     const x = Math.floor(Math.random() * gridSize) + 1;
     const y = Math.floor(Math.random() * gridSize) + 1;
-    return {x, y};
+    return { x, y };
 }
 
 
@@ -143,6 +144,18 @@ function handleKeyPress(event) {
             case 'ArrowRight':
                 direction = 'right';
                 break;
+            case 'w':
+                direction = 'up';
+                break;
+            case 's':
+                direction = 'down';
+                break;
+            case 'd':
+                direction = 'right';
+                break;
+            case 'a':
+                direction = 'left';
+                break;
         }
     }
 }
@@ -178,7 +191,7 @@ function checkCollision() {
     }
 }
 
-function resetGame(){
+function resetGame() {
     updateHighScore();
     stopGame();
     snake = [{ x: 10, y: 10 }]
@@ -191,17 +204,21 @@ function resetGame(){
     updateScore();
 }
 
-function updateScore(){
-    const currentScore = snake.length -1;
+function removeTips(){
+    tips.style.display = 'none'
+}
+
+function updateScore() {
+    const currentScore = snake.length - 1;
     score.textContent = currentScore.toString().padStart(3, '0');
 }
 
-function stopGame(){
+function stopGame() {
     clearInterval(gameIntervalt);
     gameStarted = false;
 }
 
-function updateHighScore(){
+function updateHighScore() {
     const currentScore = snake.length - 1;
     if (currentScore > highScore) {
         highScore = currentScore
