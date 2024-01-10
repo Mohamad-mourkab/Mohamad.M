@@ -18,7 +18,7 @@ body{
     justify-content: center;
     font-family: 'Bungee Spice', sans-serif;
     font-family: 'Rubik Doodle Shadow', system-ui;
-    background-color: rgb(255, 19, 19);
+    background-color: rgb(255, 0, 0);
 }
 #game-board{
     border-radius: 100px;
@@ -126,4 +126,5 @@ body{
 #logo{
     position: absolute;
     height: 200px;
+    width: 390px;
 }
