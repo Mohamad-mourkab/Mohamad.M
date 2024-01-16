@@ -164,10 +164,10 @@ document.addEventListener('keydown', handleKeyPress);
 
 function increaseSpeed() {
     if (gameSpeedDelay > 150) {
-        gameSpeedDelay -= 10;
+        gameSpeedDelay -= 5;
     }
     else if (gameSpeedDelay > 100) {
-        gameSpeedDelay -= 4;
+        gameSpeedDelay -= 3;
     }
     else if (gameSpeedDelay > 50) {
         gameSpeedDelay -= 2;
