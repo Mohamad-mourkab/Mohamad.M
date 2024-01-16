@@ -117,13 +117,6 @@ function startGame() {
 
 
 
-//test
-// draw();
-// setInterval (() => {
-//     move();
-//     draw();
-// }, 200);
-
 function handleKeyPress(event) {
     if (
         (!gameStarted && event.code === 'Space') ||
