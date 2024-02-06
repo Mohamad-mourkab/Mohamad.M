@@ -124,7 +124,7 @@ function handleKeyPress(event) {
     ) {
         startGame();
     } else {
-        switch (event.key) {
+        switch (event.key || event.code) {
             case 'ArrowUp':
                 direction = 'up';
                 break;
